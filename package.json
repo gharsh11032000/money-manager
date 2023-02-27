@@ -16,7 +16,7 @@
   "main": "index.js",
   "scripts": {
     "server": "nodemon server/server.js",
-    "start": "node sever/server.js",
+    "start": "node server/server.js",
     "client": "npm run dev --prefix money-manager",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
