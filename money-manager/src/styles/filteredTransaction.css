@@ -1,0 +1,114 @@
+.filtered__transaction--container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-offwhite);
+  padding: 3rem 2rem;
+  width: 100%;
+  z-index: 1000;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  transform: translateY(-100%);
+}
+
+.filtered__transaction--container.active {
+  transform: translateY(0%);
+  box-shadow: 0 1rem 2rem rgba(93, 175, 232, 0.25);
+}
+
+.filtered__transaction--container-small {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.filtered__transaction--container-small input {
+  width: 65%;
+}
+
+.filtered__transaction--container-small select {
+  width: 35%;
+}
+
+.filtered__transaction--types {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.filtered__transaction--types-group {
+  display: flex;
+  flex: 1;
+}
+
+.filtered__transaction--types-group input {
+  display: none;
+}
+
+.filtered__transaction--types-group label {
+  padding: 1.2rem 2rem;
+  background-color: var(--color-white);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border-radius: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: all 0.3s;
+}
+
+.filtered__transaction--types-group
+  input:checked
+  + .filtered__transaction--types-label {
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+  border: 1px solid transparent;
+}
+
+.filtered__transaction--types-group label:hover {
+  border: 1px solid var(--color-primary);
+}
+
+.set__date--container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.set__date--group {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 0.5rem;
+  position: relative;
+}
+
+.set__date--group input {
+  padding: 1.5rem 2rem;
+  border: none;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: var(--color-offwhite);
+  border-radius: 1rem;
+}
+
+.set__date--group input:focus {
+  border: 1px solid var(--color-primary);
+}
+
+.set__date--group label {
+  font-size: 1.4rem;
+  position: absolute;
+  top: -11px;
+  left: 15px;
+  background-color: var(--color-offwhite);
+  padding: 5px;
+}
+
+.set__date--group input:focus {
+  outline: none;
+}

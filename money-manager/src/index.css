@@ -1,0 +1,432 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap");
+
+:root {
+  --color-primary: #5dafe8;
+  --color-secondary: #715fe7;
+  --color-offwhite: #f2f6fe;
+  --color-offblue: #ecf7ff;
+  --color-black: #333;
+  --color-white: #fff;
+  --color-red: #f36262;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  font-size: 1.6rem;
+  color: var(--color-black);
+  background-image: linear-gradient(
+    to bottom right,
+    var(--color-primary),
+    var(--color-secondary)
+  );
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 0;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+input,
+select,
+option {
+  font-size: inherit;
+}
+
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'%3E%3Cpath fill='none' d='M0 0h24v24H0z'/%3E%3Cpath d='M12 16l-6-6h12z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem top 50%;
+  padding-right: 1rem;
+  transition: all 0.3s;
+}
+
+::placeholder {
+  opacity: 0.4;
+}
+
+.page__container {
+  width: 40rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  padding: 2.2rem;
+  background-color: var(--color-offwhite);
+  height: 90%;
+  gap: 2rem;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 3rem;
+  overflow: hidden;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: 420px) {
+  html {
+    font-size: 56.25%;
+  }
+
+  .set__date--group input {
+    padding: 1.5rem 1.5rem;
+  }
+}
+
+.fixed__home-header--container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: absolute;
+  width: 40rem;
+  background-color: var(--color-offwhite);
+  top: 0;
+  left: 0;
+  padding: 3rem 2rem 2rem;
+  z-index: 99;
+}
+
+.home__header--container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.total__amount--container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.total__amount--group-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  overflow: auto;
+  scrollbar-width: none;
+}
+
+.total__amount--group {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: 1rem;
+  background-color: var(--color-white);
+  padding: 2rem;
+  flex: 1;
+  border-radius: 1.5rem;
+}
+
+.total__amount--group label {
+  color: var(--color-white);
+  opacity: 0.7;
+}
+
+.total__amount--group-small {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  opacity: 0.7;
+}
+
+.total__amount--group span {
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+.total__amount--remaining {
+  flex-direction: row;
+  justify-content: space-between;
+
+  background: linear-gradient(
+    to bottom right,
+    hsla(303, 79%, 76%, 1) 0%,
+    var(--color-red) 100%
+  );
+  color: var(--color-white);
+}
+
+.total__amount--income {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.total__amount--expense {
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+}
+
+.total__amount--hover {
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.total__amount--hover:hover {
+  filter: brightness(90%);
+}
+
+.buttons__home--container {
+  display: flex;
+  position: absolute;
+  gap: 1rem;
+  align-items: center;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  bottom: 2rem;
+  padding: 1rem 2rem;
+  border-radius: 1.5rem;
+  background-color: var(--color-white);
+  z-index: 999;
+  box-shadow: 0rem 1rem 2rem rgba(93, 175, 232, 0.25);
+}
+
+.btn__add--transaction,
+.btn__overview--transaction,
+.btn__filter--transaction {
+  padding: 1rem;
+  font-size: 2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  color: var(--color-black);
+  text-decoration: none;
+  transition: all 0.2s;
+  cursor: pointer;
+  border: none;
+  background-color: var(--color-white);
+}
+
+.btn__add--transaction {
+  background-image: linear-gradient(
+    to bottom right,
+    var(--color-primary),
+    var(--color-secondary)
+  );
+  padding: 2rem;
+  font-size: 1.6rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  color: var(--color-white);
+  text-decoration: none;
+  transition: all 0.2s;
+  box-shadow: 0rem 1rem 2rem rgba(93, 175, 232, 0.25);
+  cursor: pointer;
+}
+
+.btn__add--transaction:hover {
+  background-image: linear-gradient(
+    to bottom right,
+    var(--color-secondary),
+    var(--color-primary)
+  );
+  box-shadow: 0rem 2rem 3rem rgba(93, 175, 232, 0.25);
+  border-radius: 2rem;
+}
+
+.btn__overview--transaction {
+  font-size: 2.2rem;
+}
+
+.group__transactions--container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-top: 27rem;
+  overflow-y: auto;
+  scrollbar-width: none;
+  border-radius: 1.5rem;
+}
+
+.group__incomes--container,
+.group__expenses--container {
+  padding-top: 0rem;
+}
+
+.add__transaction--container,
+.edit__transaction--container,
+.overview__transaction--container,
+.incomes__transaction--container,
+.expenses__transaction--container,
+.login-register__container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.add__transaction--container,
+.edit__transaction--container,
+.login-register__container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  overflow-y: unset;
+  scrollbar-width: unset;
+}
+
+.overview__transaction--container {
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.chart--container {
+  width: 35rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.form__transaction,
+.login-register__form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.form__transaction-group--1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.form__transaction-group,
+.login-register__form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.form__transaction-group label,
+.login-register__form-group label {
+  font-size: 1.6rem;
+  opacity: 0.7;
+}
+
+.form__transaction-group input,
+.form__transaction-group select,
+.filtered__transaction--search,
+.filtered__transaction--select,
+.login-register__form-group input {
+  padding: 1.2rem 2rem;
+  border: none;
+  background-color: var(--color-white);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.7rem;
+}
+
+.form__transaction-group select {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.form__transaction-group input:focus,
+.form__transaction-group select:focus,
+.filtered__transaction--search:focus,
+.filtered__transaction--select:focus,
+.login-register__form-group input:focus {
+  outline: none;
+  border: 1px solid var(--color-primary);
+}
+
+.btn__transaction--save,
+.btn__form-login-register {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(
+    to bottom right,
+    var(--color-primary),
+    var(--color-secondary)
+  );
+  border: none;
+  padding: 1.2rem 2rem;
+  color: var(--color-white);
+  font-size: 1.8rem;
+  margin-top: 1.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 1.2rem;
+  align-self: flex-end;
+  transition: all 0.2s;
+}
+
+.btn__transaction--save:hover,
+.btn__form-login-register:hover {
+  background-image: linear-gradient(
+    to bottom right,
+    var(--color-secondary),
+    var(--color-primary)
+  );
+}
+
+.page__header--container {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.btn__back {
+  font-size: 2rem;
+  color: var(--color-primary);
+  border-radius: 50%;
+  background-color: var(--color-white);
+  align-self: flex-start;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+
+.btn__back:hover {
+  border-radius: 1.5rem;
+}
+
+.btn__login {
+  margin: 0;
+}
+
+.form__link-group {
+  margin-top: 3rem;
+  align-self: center;
+}
+
+.form__link-group a:link,
+.form__link-group a:visited {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.form__link-group a:hover {
+  text-decoration: underline;
+}

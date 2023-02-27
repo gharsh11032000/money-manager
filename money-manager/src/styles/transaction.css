@@ -1,0 +1,118 @@
+.transaction--container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.transaction {
+  background-color: var(--color-white);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 1.5rem;
+  border-radius: 1.5rem;
+  overflow: hidden;
+}
+
+.transaction__header--container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.transaction__buttons--container {
+  align-self: flex-end;
+  transform: translateY(150%);
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  background-color: var(--color-offwhite);
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  opacity: 0;
+}
+
+.transaction__buttons--container svg {
+  transition: all 0.2s;
+}
+
+.transaction__buttons--container svg:hover {
+  filter: brightness(90%);
+}
+
+.transaction:hover .transaction__buttons--container {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.transaction__details--container {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.transaction__group {
+  display: flex;
+  gap: 1rem;
+}
+
+.transaction__group--2 {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.transaction--category {
+  color: var(--color-white);
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.transaction--date {
+  font-size: 1.4rem;
+  opacity: 0.4;
+}
+
+.transaction--note {
+  word-break: normal;
+}
+
+.transaction__buttons--container {
+  display: flex;
+  align-items: end;
+  gap: 1.2rem;
+}
+
+.transaction__btn--edit {
+  color: var(--color-primary);
+  font-size: 2rem;
+}
+
+.transaction__btn--delete {
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: var(--color-red);
+  padding: 0.5rem;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.transaction.income {
+  border-left: 3px solid var(--color-primary);
+}
+
+.transaction.expense {
+  border-left: 3px solid var(--color-red);
+}
+
+.transaction.income .transaction--category {
+  background-color: var(--color-primary);
+}
+
+.transaction.expense .transaction--category {
+  background-color: var(--color-secondary);
+}
