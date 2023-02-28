@@ -19,11 +19,11 @@ app.use("/api/transactions", require("./router/transactionRoute"));
 // Serve Frontend
 if (process.env.NODE_ENV === "production") {
   // Set build folder as static
-  app.use(express.static(path.join(__dirname, "../frontend/build")));
+  app.use(express.static(path.join(__dirname, "../money-manager/dist")));
 
   // FIX: below code fixes app crashing on refresh in deployment
   app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "../frontend/build/index.html"));
+    res.sendFile(path.join(__dirname, "../money-manager/dist/index.html"));
   });
 } else {
   app.get("/", async (req, res) => {
