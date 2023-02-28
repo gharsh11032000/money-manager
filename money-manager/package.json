@@ -9,10 +9,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@bundled-es-modules/axios": "^0.27.2",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "chart.js": "^4.2.0",
     "moment": "^2.29.4",
+    "money_manager": "file:..",
     "react": "^18.2.0",
     "react-chartjs-2": "^5.2.0",
     "react-dom": "^18.2.0",
