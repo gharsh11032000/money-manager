@@ -19,7 +19,7 @@
     "start": "node server/server.js",
     "client": "npm run dev --prefix money-manager",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "build": "npm run build --prefix money-manager"
+    "build": "npm install --prefix money-manager && npm run build --prefix money-manager"
   },
   "keywords": [],
   "author": "",
