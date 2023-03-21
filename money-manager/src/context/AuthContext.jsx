@@ -15,9 +15,9 @@ export const AuthContextProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [isSucess, setIsSucess] = useState(false);
 
-  const API_URL = "http://localhost:5000/api/transactions/";
-  const REGISTER_URL = "http://localhost:5000/api/user/";
-  const LOGIN_URL = "http://localhost:5000/api/user/login/";
+   const API_URL = "/api/transactions/";
+  const REGISTER_URL = "/api/user/";
+  const LOGIN_URL = "/api/user/login/";
 
   const config = {
     headers: {
