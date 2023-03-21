@@ -45,7 +45,7 @@ export const AuthContextProvider = ({ children }) => {
         setMessage("Logged in Sucessfully");
       }
     } catch (error) {
-      setMessage(error.message);
+      setMessage(error.response.data.message);
       setIsError(true);
       setIsSucess(false);
       console.log(error);
@@ -63,7 +63,7 @@ export const AuthContextProvider = ({ children }) => {
       }
     } catch (error) {
       setIsError(true);
-      setMessage(error.message);
+      setMessage(error.response.data.message);
       setIsSucess(false);
       console.log(error);
     }
@@ -90,7 +90,7 @@ export const AuthContextProvider = ({ children }) => {
       }
     } catch (error) {
       setIsError(true);
-      setMessage(error.message);
+      setMessage(error.response.data.message);
       console.log(error);
       setIsLoading(false);
     }
@@ -107,7 +107,7 @@ export const AuthContextProvider = ({ children }) => {
       }
     } catch (error) {
       setIsError(true);
-      setMessage(error.message);
+      setMessage(error.response.data.message);
       console.log(error);
     }
   }
@@ -125,7 +125,7 @@ export const AuthContextProvider = ({ children }) => {
       }
     } catch (error) {
       setIsError(true);
-      setMessage(error.message);
+      setMessage(error.response.data.message);
       console.log(error);
     }
   }
@@ -141,7 +141,7 @@ export const AuthContextProvider = ({ children }) => {
       }
     } catch (error) {
       setIsError(true);
-      setMessage(error.message);
+      setMessage(error.response.data.message);
       console.log(error);
     }
   }
